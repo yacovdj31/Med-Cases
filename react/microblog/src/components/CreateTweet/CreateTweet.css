@@ -1,0 +1,31 @@
+textarea {
+    height: 8rem;
+    width: 24rem;
+    margin-top: 5px;
+    background-color: #15202B;
+    border: 1px solid white;
+    color: white;
+    line-height: 1.5; 
+    resize: none; 
+    overflow: auto; 
+    word-wrap: break-word; 
+    border-radius: 6px;
+}
+
+.input-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-controls button {
+    margin-left: 20%;
+}
+button{
+    background-color: #007BFF;
+    color: white;
+}
+
+.count{
+    color: white;
+}
