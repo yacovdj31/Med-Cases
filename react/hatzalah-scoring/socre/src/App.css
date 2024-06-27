@@ -1,0 +1,233 @@
+/* General page styling */
+.chatbot-page-container {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-page-title {
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.chatbot-section {
+  margin-bottom: 20px;
+}
+
+.chatbot-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+.chatbot-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.chatbot-input:focus {
+  border-color: #ff6900;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 105, 0, 0.5);
+}
+
+.chatbot-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff6900;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  float: right;
+  margin-top: 20px;
+}
+
+.chatbot-button:hover {
+  background-color: #cc5600;
+}
+
+.highlight {
+  color: #ff6900;
+}
+
+.vitals-page {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.vitals-page h1 {
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.additional-info label {
+  display: block;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.additional-info input,
+.additional-info select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.additional-info input:focus,
+.additional-info select:focus {
+  border-color: #ff6900;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 105, 0, 0.5);
+}
+
+.vitals-input-page {
+  margin-top: 20px;
+}
+
+.vitals-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.vital-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.vital-entry label {
+  font-size: 16px;
+  color: #555;
+  margin-right: 10px;
+}
+
+.vital-entry input {
+  width: 100px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.vital-entry input:focus {
+  border-color: #ff6900;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 105, 0, 0.5);
+}
+
+.vital-entry span {
+  margin-left: 5px;
+  color: #555;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff6900;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e85d00;
+}
+
+button + button {
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.summary-page {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.summary-page h1 {
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.summary-content {
+  text-align: left;
+}
+
+.summary-content h2 {
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+pre {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.section-divider {
+  margin: 40px 0;
+  border-top: 2px dashed #ddd;
+}
+
+.section-box {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+}
+
+.section-box h3 {
+  margin-top: 0;
+  color: #333;
+}
