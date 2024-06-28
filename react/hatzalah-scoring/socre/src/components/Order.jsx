@@ -1,4 +1,4 @@
-// import React, { useState, useEffect } from 'react';
+// import React, { useState } from 'react';
 
 // const Order = ({ orderConfig, setOrderConfig }) => {
 //     const defaultItems = [
@@ -23,7 +23,6 @@
 //         'Listen-Breathing',
 //         'Package Gauze',
 //         'Thermometer',
-//         'Epinephrine',
 //         'Aspirin',
 //         'Antiseptic Wipes',
 //         'Antihistamines',
@@ -120,14 +119,14 @@
 //         });
 
 //         setCombinations(uniqueCombinations);
+//         setOrderConfig(uniqueCombinations); // Save combinations in orderConfig
 //     };
 
 //     const handleScoreChange = (index, value) => {
 //         const newCombinations = [...combinations];
 //         newCombinations[index].score = Math.min(Math.max(parseInt(value) || 0, 0), 100);
 //         setCombinations(newCombinations);
-//         // Save combinations to local storage
-//         localStorage.setItem('orderConfig', JSON.stringify(newCombinations));
+//         setOrderConfig(newCombinations); // Update orderConfig with new scores
 //     };
 
 //     return (
@@ -162,7 +161,6 @@
 // };
 
 // export default Order;
-
 
 import React, { useState } from 'react';
 
@@ -285,14 +283,22 @@ const Order = ({ orderConfig, setOrderConfig }) => {
         });
 
         setCombinations(uniqueCombinations);
-        setOrderConfig(uniqueCombinations); // Save combinations in orderConfig
+        setOrderConfig(prevConfig => ({
+            ...prevConfig,
+            possibleOrders: uniqueCombinations,
+            correctItems: checkedItems,
+            affectItems: allItems.filter(item => orderConfig[item] === false)
+        })); // Save combinations and items in orderConfig
     };
 
     const handleScoreChange = (index, value) => {
         const newCombinations = [...combinations];
         newCombinations[index].score = Math.min(Math.max(parseInt(value) || 0, 0), 100);
         setCombinations(newCombinations);
-        setOrderConfig(newCombinations); // Update orderConfig with new scores
+        setOrderConfig(prevConfig => ({
+            ...prevConfig,
+            possibleOrders: newCombinations
+        })); // Update orderConfig with new scores
     };
 
     return (
@@ -327,4 +333,3 @@ const Order = ({ orderConfig, setOrderConfig }) => {
 };
 
 export default Order;
-

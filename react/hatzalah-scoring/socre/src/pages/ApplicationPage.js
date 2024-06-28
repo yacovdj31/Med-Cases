@@ -1,6 +1,6 @@
 // import React, { useState, useEffect } from 'react';
 // import { useNavigate } from 'react-router-dom';
-// import Application from './components/Application';
+// import Application from '../components/Application'; // Adjust the import path if necessary
 
 // const ApplicationPage = ({ itemUsage }) => {
 //     const navigate = useNavigate();
@@ -28,8 +28,6 @@
 
 // export default ApplicationPage;
 
-
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Application from '../components/Application'; // Adjust the import path if necessary
@@ -37,7 +35,7 @@ import Application from '../components/Application'; // Adjust the import path i
 const ApplicationPage = ({ itemUsage }) => {
     const navigate = useNavigate();
     const [applicationInputs, setApplicationInputs] = useState(
-        itemUsage ? itemUsage : {}
+        JSON.parse(localStorage.getItem('applicationInputs')) || itemUsage
     );
 
     useEffect(() => {

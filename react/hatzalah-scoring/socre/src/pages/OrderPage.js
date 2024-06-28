@@ -1,33 +1,6 @@
-// // import React, { useState } from 'react';
-// // import { useNavigate } from 'react-router-dom';
-// // import Order from './Order';
-
-// // const OrderPage = () => {
-// //     const navigate = useNavigate();
-// //     const [orderConfig, setOrderConfig] = useState(
-// //         defaultItems.reduce((acc, item) => ({ ...acc, [item]: null }), {})
-// //     );
-
-// //     const handleSubmit = () => {
-// //         localStorage.setItem('orderConfig', JSON.stringify(orderConfig));
-// //         navigate('/check-vitals');
-// //     };
-
-// //     return (
-// //         <div>
-// //             <Order orderConfig={orderConfig} setOrderConfig={setOrderConfig} />
-// //             <button onClick={() => navigate(-1)}>Back</button>
-// //             <button onClick={handleSubmit}>Next</button>
-// //         </div>
-// //     );
-// // };
-
-// // export default OrderPage;
-
-
 // import React, { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
-// import Order from './Order';
+// import Order from '../components/Order';
 
 // const defaultItems = [
 //     'Pulse Oximeter',
@@ -87,8 +60,6 @@
 // };
 
 // export default OrderPage;
-
-
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -152,4 +123,3 @@ const OrderPage = () => {
 };
 
 export default OrderPage;
-

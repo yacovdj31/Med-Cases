@@ -59,7 +59,7 @@
 //                         <span>{item}</span>
 //                         <input
 //                             type="number"
-//                             min="0"
+//                             min="1"
 //                             max="5"
 //                             value={localItemUsage[item]}
 //                             onChange={(e) => handleChange(item, parseInt(e.target.value))}
@@ -73,8 +73,7 @@
 
 // export default ItemUsage;
 
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ItemUsage = ({ setItemUsage }) => {
     const defaultItems = [
@@ -118,11 +117,14 @@ const ItemUsage = ({ setItemUsage }) => {
         defaultItems.reduce((acc, item) => ({ ...acc, [item]: 1 }), {})
     );
 
+    useEffect(() => {
+        setItemUsage(localItemUsage);
+    }, [localItemUsage, setItemUsage]);
+
     const handleChange = (item, value) => {
         if (value >= 0 && value <= 5) {
             const newItemUsage = { ...localItemUsage, [item]: value };
             setLocalItemUsage(newItemUsage);
-            setItemUsage(newItemUsage);
         }
     };
 
@@ -135,7 +137,7 @@ const ItemUsage = ({ setItemUsage }) => {
                         <span>{item}</span>
                         <input
                             type="number"
-                            min="0"
+                            min="1"
                             max="5"
                             value={localItemUsage[item]}
                             onChange={(e) => handleChange(item, parseInt(e.target.value))}
