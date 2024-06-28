@@ -32,8 +32,6 @@
 
 // export default CheckVitalsPage;
 
-
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CheckVitals from '../components/CheckVitals';
@@ -54,7 +52,7 @@ const CheckVitalsPage = () => {
 
     const handleSubmit = () => {
         localStorage.setItem('vitalsCheck', JSON.stringify(vitalsCheck));
-        navigate('/summary');
+        navigate('/scoring');
     };
 
     return (

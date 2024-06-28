@@ -1,4 +1,4 @@
-// import React, { useState } from 'react';
+// import React from 'react';
 
 // const CheckVitals = ({ vitalsCheck, setVitalsCheck }) => {
 //     const vitals = [
@@ -48,6 +48,7 @@
 
 // export default CheckVitals;
 
+// src/components/CheckVitals.js
 
 import React from 'react';
 
