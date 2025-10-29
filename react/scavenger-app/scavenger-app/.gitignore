@@ -1,0 +1,30 @@
+﻿# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment
+.env
+client/.env
+server/.env
+
+# Local uploads / storage (don’t version runtime files)
+server/uploads/**
+server/storage/**
+uploads/**
+
+# Builds / coverage / cache
+client/dist/
+client/build/
+server/dist/
+coverage/
+.cache/
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

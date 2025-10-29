@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 
 const CheckVitals = ({ vitalsCheck, setVitalsCheck }) => {
@@ -23,20 +25,22 @@ const CheckVitals = ({ vitalsCheck, setVitalsCheck }) => {
                 {vitals.map((vital, index) => (
                     <div key={index} className="vital-entry">
                         <span>{vital}</span>
-                        <label>
+                        <label className="checkbox-container">
                             <input
                                 type="checkbox"
                                 checked={vitalsCheck[vital] === 'once'}
                                 onChange={() => handleChange(vital, 'once')}
                             />
+                            <span className="checkmark"></span>
                             Once
                         </label>
-                        <label>
+                        <label className="checkbox-container">
                             <input
                                 type="checkbox"
                                 checked={vitalsCheck[vital] === 'twice'}
                                 onChange={() => handleChange(vital, 'twice')}
                             />
+                            <span className="checkmark"></span>
                             Twice
                         </label>
                     </div>

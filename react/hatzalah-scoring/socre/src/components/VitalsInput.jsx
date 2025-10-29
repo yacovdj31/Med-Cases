@@ -5,7 +5,7 @@ const VitalsInput = ({ initialVitals, setInitialVitals, perfectVitals, setPerfec
         const { name, value } = e.target;
         setVitals({
             ...vitals,
-            [name]: value.slice(0, 3)
+            [name]: value
         });
     };
 
@@ -16,35 +16,13 @@ const VitalsInput = ({ initialVitals, setInitialVitals, perfectVitals, setPerfec
                 {Object.keys(initialVitals).map((vital) => (
                     <div key={vital} className="vital-entry">
                         <label>{vital}:</label>
-                        {vital === 'BP' ? (
-                            <>
-                                <input
-                                    type="text"
-                                    name="BP1"
-                                    value={initialVitals['BP1']}
-                                    onChange={(e) => handleChange(e, setInitialVitals, initialVitals)}
-                                    maxLength="3"
-                                />
-                                <span>/</span>
-                                <input
-                                    type="text"
-                                    name="BP2"
-                                    value={initialVitals['BP2']}
-                                    onChange={(e) => handleChange(e, setInitialVitals, initialVitals)}
-                                    maxLength="3"
-                                />
-                            </>
-                        ) : (
-                            <input
-                                type="text"
-                                name={vital}
-                                value={initialVitals[vital]}
-                                onChange={(e) => handleChange(e, setInitialVitals, initialVitals)}
-                                maxLength="3"
-                            />
-                        )}
-                        {vital === 'Oxygen' && <span>%</span>}
-                        {vital === 'Glucose' && <span>mg/dL</span>}
+                        <input
+                            type="text"
+                            name={vital}
+                            value={initialVitals[vital]}
+                            onChange={(e) => handleChange(e, setInitialVitals, initialVitals)}
+                            maxLength="5"
+                        />
                     </div>
                 ))}
             </div>
@@ -54,35 +32,13 @@ const VitalsInput = ({ initialVitals, setInitialVitals, perfectVitals, setPerfec
                 {Object.keys(perfectVitals).map((vital) => (
                     <div key={vital} className="vital-entry">
                         <label>{vital}:</label>
-                        {vital === 'BP' ? (
-                            <>
-                                <input
-                                    type="text"
-                                    name="BP1"
-                                    value={perfectVitals['BP1']}
-                                    onChange={(e) => handleChange(e, setPerfectVitals, perfectVitals)}
-                                    maxLength="3"
-                                />
-                                <span>/</span>
-                                <input
-                                    type="text"
-                                    name="BP2"
-                                    value={perfectVitals['BP2']}
-                                    onChange={(e) => handleChange(e, setPerfectVitals, perfectVitals)}
-                                    maxLength="3"
-                                />
-                            </>
-                        ) : (
-                            <input
-                                type="text"
-                                name={vital}
-                                value={perfectVitals[vital]}
-                                onChange={(e) => handleChange(e, setPerfectVitals, perfectVitals)}
-                                maxLength="3"
-                            />
-                        )}
-                        {vital === 'Oxygen' && <span>%</span>}
-                        {vital === 'Glucose' && <span>mg/dL</span>}
+                        <input
+                            type="text"
+                            name={vital}
+                            value={perfectVitals[vital]}
+                            onChange={(e) => handleChange(e, setPerfectVitals, perfectVitals)}
+                            maxLength="5"
+                        />
                     </div>
                 ))}
             </div>
@@ -92,35 +48,13 @@ const VitalsInput = ({ initialVitals, setInitialVitals, perfectVitals, setPerfec
                 {Object.keys(worseVitals).map((vital) => (
                     <div key={vital} className="vital-entry">
                         <label>{vital}:</label>
-                        {vital === 'BP' ? (
-                            <>
-                                <input
-                                    type="text"
-                                    name="BP1"
-                                    value={worseVitals['BP1']}
-                                    onChange={(e) => handleChange(e, setWorseVitals, worseVitals)}
-                                    maxLength="3"
-                                />
-                                <span>/</span>
-                                <input
-                                    type="text"
-                                    name="BP2"
-                                    value={worseVitals['BP2']}
-                                    onChange={(e) => handleChange(e, setWorseVitals, worseVitals)}
-                                    maxLength="3"
-                                />
-                            </>
-                        ) : (
-                            <input
-                                type="text"
-                                name={vital}
-                                value={worseVitals[vital]}
-                                onChange={(e) => handleChange(e, setWorseVitals, worseVitals)}
-                                maxLength="3"
-                            />
-                        )}
-                        {vital === 'Oxygen' && <span>%</span>}
-                        {vital === 'Glucose' && <span>mg/dL</span>}
+                        <input
+                            type="text"
+                            name={vital}
+                            value={worseVitals[vital]}
+                            onChange={(e) => handleChange(e, setWorseVitals, worseVitals)}
+                            maxLength="5"
+                        />
                     </div>
                 ))}
             </div>
@@ -129,3 +63,5 @@ const VitalsInput = ({ initialVitals, setInitialVitals, perfectVitals, setPerfec
 };
 
 export default VitalsInput;
+
+

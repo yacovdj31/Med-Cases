@@ -13,28 +13,28 @@ const VitalsInputPage = () => {
         BP2: ''
     };
 
-    const [id, setId] = useState(localStorage.getItem('id') || '');
-    const [dispatchCall, setDispatchCall] = useState(localStorage.getItem('dispatchCall') || '');
-    const [diagnosis, setDiagnosis] = useState(localStorage.getItem('diagnosis') || '');
-    const [category, setCategory] = useState(localStorage.getItem('category') || 'Cardiac');
-    const [initialHealthLevel, setInitialHealthLevel] = useState(localStorage.getItem('initialHealthLevel') || '');
-    const [maxHealthLevel, setMaxHealthLevel] = useState(localStorage.getItem('maxHealthLevel') || '');
-    const [initialVitals, setInitialVitals] = useState(JSON.parse(localStorage.getItem('initialVitals')) || initialVitalState);
-    const [perfectVitals, setPerfectVitals] = useState(JSON.parse(localStorage.getItem('perfectVitals')) || initialVitalState);
-    const [worseVitals, setWorseVitals] = useState(JSON.parse(localStorage.getItem('worseVitals')) || initialVitalState);
-    const [character, setCharacter] = useState(localStorage.getItem('character') || '');
+    const [id, setId] = useState(sessionStorage.getItem('id') || '');
+    const [dispatchCall, setDispatchCall] = useState(sessionStorage.getItem('dispatchCall') || '');
+    const [diagnosis, setDiagnosis] = useState(sessionStorage.getItem('diagnosis') || '');
+    const [category, setCategory] = useState(sessionStorage.getItem('category') || 'Cardiac');
+    const [initialHealthLevel, setInitialHealthLevel] = useState(sessionStorage.getItem('initialHealthLevel') || '');
+    const [maxHealthLevel, setMaxHealthLevel] = useState(sessionStorage.getItem('maxHealthLevel') || '');
+    const [initialVitals, setInitialVitals] = useState(JSON.parse(sessionStorage.getItem('initialVitals')) || initialVitalState);
+    const [perfectVitals, setPerfectVitals] = useState(JSON.parse(sessionStorage.getItem('perfectVitals')) || initialVitalState);
+    const [worseVitals, setWorseVitals] = useState(JSON.parse(sessionStorage.getItem('worseVitals')) || initialVitalState);
+    const [character, setCharacter] = useState(sessionStorage.getItem('character') || '');
 
     useEffect(() => {
-        localStorage.setItem('id', id);
-        localStorage.setItem('dispatchCall', dispatchCall);
-        localStorage.setItem('diagnosis', diagnosis);
-        localStorage.setItem('category', category);
-        localStorage.setItem('initialHealthLevel', initialHealthLevel);
-        localStorage.setItem('maxHealthLevel', maxHealthLevel);
-        localStorage.setItem('initialVitals', JSON.stringify(initialVitals));
-        localStorage.setItem('perfectVitals', JSON.stringify(perfectVitals));
-        localStorage.setItem('worseVitals', JSON.stringify(worseVitals));
-        localStorage.setItem('character', character);
+        sessionStorage.setItem('id', id);
+        sessionStorage.setItem('dispatchCall', dispatchCall);
+        sessionStorage.setItem('diagnosis', diagnosis);
+        sessionStorage.setItem('category', category);
+        sessionStorage.setItem('initialHealthLevel', initialHealthLevel);
+        sessionStorage.setItem('maxHealthLevel', maxHealthLevel);
+        sessionStorage.setItem('initialVitals', JSON.stringify(initialVitals));
+        sessionStorage.setItem('perfectVitals', JSON.stringify(perfectVitals));
+        sessionStorage.setItem('worseVitals', JSON.stringify(worseVitals));
+        sessionStorage.setItem('character', character);
     }, [id, dispatchCall, diagnosis, category, initialHealthLevel, maxHealthLevel, initialVitals, perfectVitals, worseVitals, character]);
 
     const handleCharacterChange = (e) => {
@@ -43,6 +43,21 @@ const VitalsInputPage = () => {
     };
 
     const handleSubmit = () => {
+        const summaryData = {
+            id,
+            character,
+            dispatchCall,
+            diagnosis,
+            category,
+            initialHealthLevel,
+            maxHealthLevel,
+            initialVitals,
+            perfectVitals,
+            worseVitals
+        };
+
+        localStorage.setItem('summaryData', JSON.stringify(summaryData));
+        console.log('Summary Data:', summaryData);  // Console log the whole summary data
         navigate('/item-usage');
     };
 

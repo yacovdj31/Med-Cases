@@ -1,4 +1,109 @@
-/* General page styling */
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #cccccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+h1, h2 {
+  color: #333333;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input:focus, select:focus {
+  border-color: #ff6900;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 105, 0, 0.5);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff6900;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #cc5600;
+}
+
+button + button {
+  margin-left: 10px;
+}
+
+.section-box {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+  width: 100%;
+  text-align: left;
+}
+
+.section-box h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+pre {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.total-score-box, .total {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  background-color: #f0f0f0;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px; /* Added margin-bottom to avoid overlap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center align text */
+}
+
+
+/* Chatbot Page */
 .chatbot-page-container {
   font-family: Arial, sans-serif;
   max-width: 800px;
@@ -64,6 +169,7 @@
   color: #ff6900;
 }
 
+/* Vitals Page */
 .vitals-page {
   font-family: Arial, sans-serif;
   max-width: 800px;
@@ -146,7 +252,199 @@
   color: #555;
 }
 
-button {
+/* Item Usage Page */
+.item-usage-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item-usage-page h1 {
+  color: #444444;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.item-usage-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.item-usage-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.item-usage-entry span {
+  font-size: 14px;
+  color: #333333;
+  font-weight: 500;
+  flex: 1;
+}
+
+.item-usage-entry input {
+  width: 50px;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  text-align: right;
+  transition: border-color 0.3s ease;
+}
+
+.item-usage-entry input:focus {
+  border-color: #ff6900;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 105, 0, 0.5);
+}
+
+/* Application Page */
+.application-time-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding-top: 60px; /* Added padding to make space for the fixed total box */
+}
+
+.application-time-page h1 {
+  color: #444444;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.application-time-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.application-time-entry {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.application-time-entry span {
+  font-size: 14px;
+  color: #333333;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.application-time-inputs {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.application-time-inputs input {
+  width: 50px;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  text-align: right;
+  transition: border-color 0.3s ease;
+}
+
+
+.order-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-page h1 {
+  color: #444444;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.order-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.order-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+  transition: background-color 0.3s ease;
+}
+
+.order-entry.selected {
+  background-color: #ff6900;
+  color: white;
+}
+
+.order-entry.deselected {
+  background-color: #555555;
+  color: white;
+}
+
+.order-entry span {
+  font-size: 14px;
+  color: inherit;
+  font-weight: 500;
+}
+
+.button-group {
+  display: flex;
+  gap: 5px;
+}
+
+.order-entry button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #444444;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.order-entry button:hover {
+  background-color: #333333;
+}
+
+.generate-button {
   padding: 10px 20px;
   font-size: 16px;
   background-color: #ff6900;
@@ -154,16 +452,207 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
 }
 
-button:hover {
-  background-color: #e85d00;
+.generate-button:hover {
+  background-color: #cc5600;
 }
 
-button + button {
-  margin-left: 10px;
+.combinations-list {
+  margin-top: 20px;
 }
 
+.combination-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+  margin-bottom: 10px;
+}
+
+.combination-entry span {
+  font-size: 14px;
+  color: #333333;
+  font-weight: 500;
+}
+
+.combination-entry input {
+  width: 60px;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  text-align: right;
+  transition: border-color 0.3s ease;
+}
+
+/* Check Vitals Page */
+.check-vitals-page-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.check-vitals-page h1 {
+  color: #333333;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.vitals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.vital-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.vital-entry span {
+  font-size: 16px;
+  color: #333333;
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #444444;
+  margin-right: 10px;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #ff6900;
+  border-color: #ff6900;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Scoring Page */
+.scoring-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.scoring-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.scoring-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.total
+.scoring-entry span {
+  font-size: 16px;
+  color: #333333;
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+}
+
+.scoring-entry input {
+  width: 60px;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.scoring-entry input:focus {
+  border-color: #ff6900;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 105, 0, 0.5);
+}
+
+/* Summary Page */
 .summary-page {
   font-family: Arial, sans-serif;
   max-width: 800px;
@@ -175,31 +664,8 @@ button + button {
   text-align: center;
 }
 
-.summary-page h1 {
-  color: #333;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
 .summary-content {
   text-align: left;
-}
-
-.summary-content h2 {
-  color: #333;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-pre {
-  background: #fff;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: auto;
-  white-space: pre-wrap;
 }
 
 .section-divider {
@@ -207,15 +673,95 @@ pre {
   border-top: 2px dashed #ddd;
 }
 
-.section-box {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 20px;
-  background-color: #fafafa;
+/* HomePage Styles */
+.home-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.section-box h3 {
-  margin-top: 0;
-  color: #333;
+.home-page h1 {
+  color: #444444;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
 }
+
+.home-page button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff6900;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.home-page button:hover {
+  background-color: #cc5600;
+}
+
+.cases-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.case-box {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.case-box:hover {
+  background-color: #ff6900;
+  color: white;
+}
+
+.case-box span {
+  font-size: 14px;
+  color: inherit;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Add this CSS to your styles.css or any relevant CSS file */
+
+.case-box {
+  position: relative;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.case-box button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #ff6900;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px;
+}
+

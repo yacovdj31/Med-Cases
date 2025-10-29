@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+
+
+import React, { useState, useEffect } from 'react';
 
 const Order = ({ orderConfig, setOrderConfig }) => {
     const defaultItems = [
@@ -38,12 +40,20 @@ const Order = ({ orderConfig, setOrderConfig }) => {
     ];
 
     const [combinations, setCombinations] = useState([]);
+    const [checkedCount, setCheckedCount] = useState(0);
 
     const handleSelection = (item, value) => {
-        setOrderConfig(prevConfig => ({
-            ...prevConfig,
-            [item]: value
-        }));
+        if (value && checkedCount >= 5 && orderConfig[item] !== true) return; // Limit to 5 items
+
+        setOrderConfig(prevConfig => {
+            const newState = prevConfig[item] === value ? null : value;
+            if (newState === true) setCheckedCount(prevCount => prevCount + 1);
+            if (prevConfig[item] === true) setCheckedCount(prevCount => prevCount - 1);
+            return {
+                ...prevConfig,
+                [item]: newState
+            };
+        });
     };
 
     const generatePermutations = (arr) => {
@@ -97,7 +107,6 @@ const Order = ({ orderConfig, setOrderConfig }) => {
             permutations.forEach(perm => combinations.push({ items: perm, score: 0 }));
         });
 
-      
         const uniqueCombinations = [];
         const seen = new Set();
 
@@ -109,7 +118,6 @@ const Order = ({ orderConfig, setOrderConfig }) => {
             }
         });
 
-       
         uniqueCombinations.sort((a, b) => {
             if (b.items.length !== a.items.length) {
                 return b.items.length - a.items.length;
@@ -123,7 +131,7 @@ const Order = ({ orderConfig, setOrderConfig }) => {
             possibleOrders: uniqueCombinations,
             correctItems: checkedItems,
             affectItems: allItems.filter(item => orderConfig[item] === false)
-        })); 
+        }));
     };
 
     const handleScoreChange = (index, value) => {
@@ -133,7 +141,23 @@ const Order = ({ orderConfig, setOrderConfig }) => {
         setOrderConfig(prevConfig => ({
             ...prevConfig,
             possibleOrders: newCombinations
-        })); 
+        }));
+    };
+
+    const handleFocus = (index) => {
+        const newCombinations = [...combinations];
+        if (newCombinations[index].score === 0) {
+            newCombinations[index].score = '';
+        }
+        setCombinations(newCombinations);
+    };
+
+    const handleBlur = (index) => {
+        const newCombinations = [...combinations];
+        if (newCombinations[index].score === '') {
+            newCombinations[index].score = 0;
+        }
+        setCombinations(newCombinations);
     };
 
     return (
@@ -141,10 +165,12 @@ const Order = ({ orderConfig, setOrderConfig }) => {
             <h1>Order</h1>
             <div className="order-list">
                 {defaultItems.map((item, index) => (
-                    <div key={index} className="order-entry">
+                    <div key={index} className={`order-entry ${orderConfig[item] === true ? 'selected' : orderConfig[item] === false ? 'deselected' : ''}`}>
                         <span>{item}</span>
-                        <button onClick={() => handleSelection(item, true)}>&#x2714;</button>
-                        <button onClick={() => handleSelection(item, false)}>&#x2716;</button>
+                        <div className="button-group">
+                            <button onClick={() => handleSelection(item, true)}>&#x2714;</button>
+                            <button onClick={() => handleSelection(item, false)}>&#x2716;</button>
+                        </div>
                     </div>
                 ))}
             </div>
@@ -157,6 +183,8 @@ const Order = ({ orderConfig, setOrderConfig }) => {
                             type="number"
                             value={combo.score}
                             onChange={(e) => handleScoreChange(index, e.target.value)}
+                            onFocus={() => handleFocus(index)}
+                            onBlur={() => handleBlur(index)}
                             min="0"
                             max="100"
                         />
